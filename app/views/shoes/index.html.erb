@@ -1,0 +1,33 @@
+<div class="page-header">
+  <%= link_to new_shoe_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Shoe
+  <% end %>
+  <h1>Listing shoes</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Shoe</th>
+            <th>Brand</th>
+            <th>Bought</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @shoes) do |shoe| %>
+            <td><%= shoe.shoe %></td>
+            <td><%= shoe.brand %></td>
+            <td><%= shoe.bought %></td>
+            <td><%= link_to 'Show', shoe %></td>
+        <td><%= link_to 'Edit', edit_shoe_path(shoe) %></td>
+        <td><%= link_to 'Destroy', shoe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

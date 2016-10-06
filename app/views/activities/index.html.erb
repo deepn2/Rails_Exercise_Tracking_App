@@ -1,0 +1,39 @@
+<div class="page-header">
+  <%= link_to new_activity_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Activity
+  <% end %>
+  <h1>Listing activities</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Exercise</th>
+            <th>Intensity</th>
+            <th>Duration</th>
+            <th>Distance</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @activities) do |activity| %>
+            <td><%= activity.exercise %></td>
+            <td><%= activity.intensity %></td>
+            <td><%= activity.duration %></td>
+            <td><%= activity.distance %></td>
+            <td><%= activity.date %></td>
+            <td><%= activity.description %></td>
+            <td><%= link_to 'Show', activity %></td>
+        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
+        <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

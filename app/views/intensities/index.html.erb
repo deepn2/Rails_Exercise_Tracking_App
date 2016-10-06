@@ -1,0 +1,31 @@
+<div class="page-header">
+  <%= link_to new_intensity_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Intensity
+  <% end %>
+  <h1>Listing intensities</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Intensity</th>
+            <th>Description</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @intensities) do |intensity| %>
+            <td><%= intensity.intensity %></td>
+            <td><%= intensity.description %></td>
+            <td><%= link_to 'Show', intensity %></td>
+        <td><%= link_to 'Edit', edit_intensity_path(intensity) %></td>
+        <td><%= link_to 'Destroy', intensity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

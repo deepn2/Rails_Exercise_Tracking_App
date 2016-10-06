@@ -1,0 +1,32 @@
+<div class="page-header">
+  <%= link_to activities_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_activity_path(@activity), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show activity</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Exercise:</dt>
+  <dd><%= @activity.exercise %></dd>
+
+  <dt>Intensity:</dt>
+  <dd><%= @activity.intensity %></dd>
+
+  <dt>Duration:</dt>
+  <dd><%= @activity.duration %></dd>
+
+  <dt>Distance:</dt>
+  <dd><%= @activity.distance %></dd>
+
+  <dt>Date:</dt>
+  <dd><%= @activity.date %></dd>
+
+  <dt>Description:</dt>
+  <dd><%= @activity.description %></dd>
+
+</dl>

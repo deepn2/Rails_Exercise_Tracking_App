@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shoe: MyString
+  brand: MyString
+  bought: 2016-10-03
+
+two:
+  shoe: MyString
+  brand: MyString
+  bought: 2016-10-03
